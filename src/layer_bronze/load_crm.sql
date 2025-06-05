@@ -3,8 +3,9 @@
 
 Purpose :- 
     
-    This script loads all data from the csv files to the 
-    tables in datawarehouse_bronze using load data infile
+    This script loads all crm data from the csv files to 
+    the tables in datawarehouse_bronze using 
+    LOAD DATA INFILE
 
 Note :- 
     
