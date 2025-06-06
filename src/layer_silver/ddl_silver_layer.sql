@@ -36,6 +36,7 @@ create or replace table crm_cust_info (
 create or replace table crm_prd_info (
 
     prd_id                  int,
+    cat_id                  varchar(20),
     prd_key                 varchar(50),
     prd_nm                  varchar(50),
     prd_cost                int,
@@ -52,9 +53,9 @@ create or replace table crm_sales_details (
     sls_ord_num             varchar(20),
     sls_prd_key             varchar(20),
     sls_cust_id             int,
-    sls_order_dt            int,
-    sls_ship_dt             int,
-    sls_due_dt              int,
+    sls_order_dt            date,
+    sls_ship_dt             date,
+    sls_due_dt              date,
     sls_sales               int,
     sls_quantity            int,
     sls_price               int,
