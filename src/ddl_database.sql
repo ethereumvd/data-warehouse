@@ -6,7 +6,7 @@ Purpose :-
     Warehouse in MariaDB / MySQL 
 
 WARNING :- 
-    the four DROP DATABASE statements below will
+    the following DROP DATABASE statements below will
     delete everything inside those databases
 
 =============================================================
