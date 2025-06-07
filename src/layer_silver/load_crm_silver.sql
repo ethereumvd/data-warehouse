@@ -30,6 +30,8 @@ begin
         select '!!! An Error Occured !!!' as '';
     end;
 
+    select '>>>Loading CRM tables into Silver Layer' as '';
+
     set start_time = now();
     select '>>>Loading crm_cust_info' as '';
     select '>>>Truncating datawarehouse_silver.crm_cust_info' as '';
