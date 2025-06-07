@@ -128,6 +128,93 @@ where
 
 
 
+/*=============================================================
+    Check erp_cust_az12 table 
+=============================================================*/
+
+--data cleansing
+
+select 
+    cid ,
+    case 
+        when trim(cid) like 'NAS%' then substring(cid, 4, length(trim(cid)))
+        else trim(cid)
+    end as cid_new
+from datawarehouse_silver.erp_cust_az12 
+limit 20;
+
+--check for invalid dates
+select 
+    bdate 
+from datawarehouse_silver.erp_cust_az12
+where bdate < '1925-01-01' or bdate > now();
+
+--check for data consistency and standardization
+
+select 
+    gen,
+    case 
+        when lower(trim(gen)) in ('f', 'female') then 'Female'
+        when lower(trim(gen)) in ('m', 'male') then 'Male'
+        else 'N/A'
+    end as gen_new
+from datawarehouse_silver.erp_cust_az12 limit 20;
+
+
+
+/*=============================================================
+    Check erp_loc_a101 table 
+=============================================================*/
+
+select 
+    *
+from datawarehouse_silver.erp_loc_a101 limit 20;
+
+select 
+    cid 
+from datawarehouse_silver.erp_loc_a101 
+where trim(cid) not like 'AW%';
+
+-- data standardization and consistency check
+
+select 
+    replace(cntry,' ', '') as cntry 
+from datawarehouse_silver.erp_loc_a101;
+
+
+
+/*=============================================================
+    Check erp_px_cat_g1v2 table 
+=============================================================*/
+
+
+--check for unwanted spaces
+select 
+    * 
+from datawarehouse_silver.erp_px_cat_g1v2
+where 
+    cat != trim(cat)
+    or subcat != trim(subcat)
+    or maintenance != trim(maintenance)
+;
+
+--check for data standardization 
+select distinct
+    cat
+from datawarehouse_silver.erp_px_cat_g1v2;
+
+select distinct
+    subcat
+from datawarehouse_silver.erp_px_cat_g1v2;
+
+select distinct 
+    maintenance
+from datawarehouse_silver.erp_px_cat_g1v2;
+
+--check because id wasnt looking as expected
+select distinct 
+    id
+from datawarehouse_silver.erp_px_cat_g1v2;
 
 
 
