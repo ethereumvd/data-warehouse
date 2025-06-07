@@ -7,7 +7,7 @@ Script Purpose:
     database
 
 Warning:
-    Runnig this stored procedure will truncate all the erp
+    Runnig this stored procedure will truncate all the ERP
     tables present in the datawarehouse_silver database
 
 Usage Example:
