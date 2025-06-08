@@ -22,7 +22,7 @@ The **Silver Layer** represents the cleansed and conformed data stage. Raw data 
 The **Gold Layer** represents the final business-level data model, optimized for reporting and analytics. It organizes data into **dimension tables** and **fact tables** to support business intelligence use cases.  
 This layer follows a **Star Schema** design, where fact tables reference multiple dimension tables via surrogate keys, enabling efficient OLAP-style querying.
 
-### Tables and Views
+### Views
 
 - `dimension_customers`
   - **Purpose**: Stores customer details enriched with demographic and geographic attributes.
