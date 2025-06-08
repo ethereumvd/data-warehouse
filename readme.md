@@ -58,8 +58,8 @@ data_warehouse_project
 ```
 ## ⚠️  Limitations  
 
-- MariaDB / MySQL doesn't support schemas so three separate databases for the bronze, silver and gold layer have been created 
- 
-- As MariaDB / MySQL doesn't support `LOAD DATA INFILE` inside stored procedures we have to do it outside the stored procedures manually 
+- MariaDB / MySQL doesn't support schemas, so three separate databases — one each for the Bronze, Silver, and Gold layers — have been created.
+
+- Since MariaDB / MySQL doesn't support `LOAD DATA INFILE` inside stored procedures, the loading is done manually outside the procedures.
 
 Datasets have been taken from [DataWithBaraa](https://www.datawithbaraa.com/wp-content/uploads/2025/01/sql-data-warehouse-project.zip)
